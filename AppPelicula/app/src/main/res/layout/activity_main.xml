@@ -10,57 +10,65 @@
     <ImageView
             android:src="@drawable/logoapp"
             android:layout_width="300dp"
-            android:translationX="55dp"
-            android:translationY="-180dp"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_height="200dp" android:id="@+id/logo" app:layout_constraintStart_toStartOf="parent"/>
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="395dp"
-            android:layout_height="429dp" tools:layout_editor_absoluteX="8dp"           android:layout_marginTop="8dp"
+            android:layout_marginBottom="250dp"
+            android:layout_height="200dp"
+            android:id="@+id/logo"/>
+    <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:hint="Correo"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="400dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/correo" android:textSize="20sp"
+            tools:layout_editor_absoluteY="384dp"
+            tools:layout_editor_absoluteX="55dp"
+            tools:ignore="MissingConstraints"/>
+    <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Contraseña"
+            android:ems="10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/pass" android:textSize="20sp"
+            tools:layout_editor_absoluteX="55dp"
+            app:layout_constraintTop_toBottomOf="@+id/correo"
+            android:layout_marginTop="25dp"
+            tools:ignore="MissingConstraints"/>
+    <Button
+            android:text="Acceder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
+            app:layout_constraintTop_toBottomOf="@+id/pass"
+            android:id="@+id/acceder"
+            android:background="#00346B"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logo">
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:ems="10"
-                android:hint="Email"
-                android:id="@+id/correo"/>
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:hint="Password"
-                android:ems="10"
-                android:id="@+id/pass"/>
-        <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                    <android.support.design.widget.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="hint"/>
-                </android.support.design.widget.TextInputLayout>
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="hint"/>
-        </android.support.design.widget.TextInputLayout>
-    </LinearLayout>
+    />
+    <Button
+            android:text="Registrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/acceder"
+            android:id="@+id/registrar"
+            android:background="#00346B"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+    />
+    />
 
 </android.support.constraint.ConstraintLayout>
