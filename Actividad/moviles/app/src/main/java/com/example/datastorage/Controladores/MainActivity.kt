@@ -50,5 +50,11 @@ class MainActivity : AppCompatActivity()
         val intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)
     }
+
+    fun movie(view: View)
+    {
+        val intent = Intent(this, SaveMovieActivity::class.java)
+        startActivity(intent)
+    }
 }
 

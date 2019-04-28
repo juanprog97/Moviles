@@ -12,4 +12,9 @@
     <string name="registrar">Registrar</string>
     <string name="volver">Volver</string>
     <string name="Cargar">Cargar imagen</string>
+
+    <string name="title">Titulo</string>
+    <string name="año">Año</string>
+    <string name="sinopsis">Sinopsis</string>
+    <string name="Guardar">Guardar</string>
 </resources>
