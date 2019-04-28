@@ -1,0 +1,7 @@
+#Sat Apr 27 19:16:56 COT 2019
+base.0=E\:\\AndroidProyects\\AppPelicula\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=E\:\\AndroidProyects\\AppPelicula\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
