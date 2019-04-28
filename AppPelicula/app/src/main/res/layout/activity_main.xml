@@ -8,7 +8,7 @@
         android:background="@drawable/gradient"
         tools:context=".Controladores.MainActivity" android:id="@+id/relativeLayout2">
     <ImageView
-            android:src="@drawable/logoapp"
+            android:src="@drawable/logo"
             android:layout_width="300dp"
 
             app:layout_constraintBottom_toBottomOf="parent"

@@ -1030,6 +1030,7 @@ id FUNCTION
 id META
 id SHIFT
 id SYM
+id acceder
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1147,6 +1148,7 @@ id pin
 id progress_circular
 id progress_horizontal
 id radio
+id registrar
 id relativeLayout2
 id right
 id right_icon
