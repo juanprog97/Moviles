@@ -9,6 +9,10 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".Controladores.registerUser">
+        </activity>
+        <activity android:name=".Controladores.registeUser">
+        </activity>
         <activity android:name=".Controladores.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

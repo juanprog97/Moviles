@@ -1006,7 +1006,7 @@ drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
-drawable logoapp
+drawable logo
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1073,6 +1073,7 @@ id collapseActionView
 id container
 id content
 id contentPanel
+id contra
 id coordinator
 id correo
 id custom
@@ -1087,6 +1088,7 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id edad
 id edit_query
 id end
 id enterAlways
@@ -1131,6 +1133,7 @@ id mtrl_internal_children_alpha_tag
 id multiply
 id navigation_header_container
 id never
+id nombre
 id none
 id normal
 id notification_background
@@ -1226,6 +1229,7 @@ id up
 id useLogo
 id view_offset_helper
 id visible
+id volver
 id withText
 id wrap
 id wrap_content
@@ -1277,6 +1281,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_register_user
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1344,6 +1349,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string acceder
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -1358,6 +1364,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string registrar
 string search_menu_title
 string status_bar_notification_info_overflow
 style AlertDialog_AppCompat

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-21:12
-INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-21:12
-INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-21:12
-INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-21:12
+ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-25:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\juanm\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\d25c90bd0a2bee5a40ad8d21de6a935a\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\juanm\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\856529bdf2fe38896a5d2d93e6b13fc6\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\juanm\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\5ba7ef9dd247a5f6382560000c382e13\AndroidManifest.xml:2:1-11:12
@@ -35,25 +35,25 @@ MERGED from [com.android.support:interpolator:28.0.0] C:\Users\juanm\.gradle\cac
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\juanm\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\6ab925dbb1fe22909b29e0463004ff4d\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\juanm\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\2f671a0aed3ab200f30942fe28e47d27\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\juanm\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\1482d9ca6ca5e188e69d293671f8c915\AndroidManifest.xml:17:1-22:12
-INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-21:12
-INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-21:12
-INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-25:12
 	package
 		ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:3:11-45
 		INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml
 		INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml
-		ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-21:12
+		ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-25:12
 		INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml
-		ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-21:12
+		ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:1-25:12
 		INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:5:5-19:19
+ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:5:5-23:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\juanm\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\d25c90bd0a2bee5a40ad8d21de6a935a\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\juanm\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\d25c90bd0a2bee5a40ad8d21de6a935a\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\juanm\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\5ba7ef9dd247a5f6382560000c382e13\AndroidManifest.xml:9:5-20
@@ -76,20 +76,28 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\juanm\.gra
 		ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:6:13-39
 	android:theme
 		ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:11:13-63
-activity#com.example.apppeliculas.Controladores.MainActivity
-ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:12:9-18:20
+activity#com.example.apppeliculas.Controladores.registerUser
+ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:12:9-13:20
 	android:name
 		ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:12:19-61
+activity#com.example.apppeliculas.Controladores.registeUser
+ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:14:9-15:20
+	android:name
+		ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:14:19-60
+activity#com.example.apppeliculas.Controladores.MainActivity
+ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:16:9-22:20
+	android:name
+		ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:16:19-61
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:13:13-17:29
+ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:17:13-21:29
 action#android.intent.action.MAIN
-ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:14:17-68
+ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:18:17-68
 	android:name
-		ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:14:25-66
+		ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:18:25-66
 category#android.intent.category.LAUNCHER
-ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:16:17-76
+ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:20:17-76
 	android:name
-		ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:16:27-74
+		ADDED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml:20:27-74
 uses-sdk
 INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\AndroidProyects\AppPelicula\app\src\main\AndroidManifest.xml

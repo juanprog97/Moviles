@@ -1,4 +1,4 @@
-#Sat Apr 27 23:20:55 COT 2019
+#Sun Apr 28 15:06:35 COT 2019
 base.0=E\:\\AndroidProyects\\AppPelicula\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out
 path.1=classes.dex
 renamed.1=classes2.dex
