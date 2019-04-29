@@ -15,7 +15,7 @@ class UserDBServices(context: Context) : SQLiteOpenHelper(context, "UserDBServic
                            " name text," +
                            " email text," +
                            " age integer," +
-                           " password text,"+
+                           " password text," +
                             " images blob);"
 
         println("Creado")
