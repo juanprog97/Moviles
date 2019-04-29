@@ -15,11 +15,11 @@ class LoginServices(context: Context)
         this.user = user
         var result : Boolean = false
 
-        if(sharedConnection.verifyUser(user))
+        /*if(sharedConnection.verifyUser(user))
         {
             result =  sharedConnection.verifyUser(this.user)
         }
-        else
+        else*/
             result =  dbConnection.verifyUser(this.user)
 
         return result

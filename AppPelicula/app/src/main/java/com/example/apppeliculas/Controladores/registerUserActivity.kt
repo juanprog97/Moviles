@@ -12,7 +12,7 @@ import android.widget.Toast
 import com.example.apppeliculas.R
 import com.example.apppeliculas.Modelos.User
 import com.example.apppeliculas.Servicios.UserDBServices
-import java.time.LocalDateTime
+
 
 class registerUserActivity : AppCompatActivity() {
 
@@ -34,8 +34,8 @@ class registerUserActivity : AppCompatActivity() {
     fun registro(view: View){
         val nombre = findViewById<EditText>(R.id.nombre)
         val correo = findViewById<EditText>(R.id.correo)
-        val contra  = findViewById<EditText>(R.id.pass)
-        val  edad =  findViewById<EditText>(R.id.edad)
+        val contra  = findViewById<EditText>(R.id.contra)
+        val edad =  findViewById<EditText>(R.id.edad)
         if(TextUtils.isEmpty(nombre.text.toString())==false  &&  TextUtils.isEmpty(correo.text.toString())==false   && TextUtils.isEmpty(contra.text.toString())==false  && TextUtils.isEmpty(edad.text.toString())==false )
         {
             val user = User(null, nombre.text.toString(), correo.text.toString(),edad.text.toString().toInt(), contra.text.toString());

@@ -12,8 +12,8 @@ class MovieDBServices(context: Context) : SQLiteOpenHelper(context, "MovieDBServ
 
     override fun onCreate(db: SQLiteDatabase?) {
 
-        val sql: String= "drop table Movies"
-        db?.execSQL(sql)
+        //val sql: String= "drop table Movies"
+        //db?.execSQL(sql)
         val create: String= "Create Table Movies (idUser int primarykey," +
                 "year integer," +
                 "title text," +

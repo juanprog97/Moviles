@@ -1058,12 +1058,13 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addMovie
 id alertTitle
 id all
 id always
 id async
 id auto
-id año
+id aÃ±o
 id barrier
 id beginning
 id blocking

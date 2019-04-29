@@ -13,7 +13,7 @@
         </activity>
         <activity android:name=".Controladores.registerUserActivity">
         </activity>
-        <activity android:name=".Controladores.registeUser">
+        <activity android:name=".Controladores.SaveMovieActivity">
         </activity>
         <activity android:name=".Controladores.MainActivity">
             <intent-filter>
