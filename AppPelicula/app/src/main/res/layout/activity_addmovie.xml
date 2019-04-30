@@ -18,17 +18,31 @@
             android:onClick="cargarImagen"
     />
     <Button
-            android:text="Agregar pelicula"
+        android:text="Agregar pelicula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteY="560dp"
+        app:layout_constraintVertical_bias="0.15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cargarImagen"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="#00346B"
+        android:id="@+id/registrarMovie"
+        android:onClick="SaveMovie"
+    />
+    <Button
+            android:text="volver"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:layout_editor_absoluteY="560dp"
-            android:layout_marginTop="50dp"
-            app:layout_constraintTop_toBottomOf="@id/cargarImagen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/registrarMovie"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:background="#00346B"
-            android:id="@+id/registrarMovie"
-            android:onClick="SaveMovie"
+            android:id="@+id/regresar"
+            android:onClick="volver"
     />
     <LinearLayout
             android:layout_width="match_parent"

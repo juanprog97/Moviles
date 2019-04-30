@@ -56,6 +56,11 @@ class SaveMovieActivity : AppCompatActivity(){
         startActivityForResult(intent,1)
     }
 
+    fun volver(view:View){
+        val intent = Intent(this,listMovieActivity::class.java)
+        startActivity(intent)
+    }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

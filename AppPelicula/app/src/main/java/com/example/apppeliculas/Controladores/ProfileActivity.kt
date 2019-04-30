@@ -16,7 +16,7 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
-        val  nombrePeli: String = intent.getStringExtra("name")
+        val  nombrePeli: String = intent.getStringExtra("nombre")
         val  sipnosis: String = intent.getStringExtra("sipnosis")
         val  año: String = intent.getStringExtra("año")
         val image: ByteArray =  intent.getByteArrayExtra("images")
@@ -30,7 +30,7 @@ class ProfileActivity : AppCompatActivity() {
         nombreId.text = nombrePeli
         sipnosisId.text = sipnosis
     }
-    fun reserva(view: View){
+    fun reserva(){
         println("Implementar")
     }
     fun volver(view: View)

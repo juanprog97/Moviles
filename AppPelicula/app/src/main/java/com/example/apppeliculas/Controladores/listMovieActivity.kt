@@ -10,7 +10,7 @@ import com.example.apppeliculas.Adapters.MovieListAdapter
 import com.example.apppeliculas.Modelos.Movie
 import com.example.apppeliculas.R
 import com.example.apppeliculas.Servicios.MovieDBServices
-import com.example.apppeliculas.Controladores.ProfileActivity
+
 
 
 class listMovieActivity : AppCompatActivity() {
