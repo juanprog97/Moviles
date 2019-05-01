@@ -59,10 +59,17 @@ class MovieListAdapter(private val activity: Activity, MovieList: List<Movie>?) 
         val nombre = vi.findViewById<TextView>(R.id.name)
         val edad = vi.findViewById<TextView>(R.id.year)
         val image = vi.findViewById<ImageView>(R.id.userImage)
+        val reserva = vi.findViewById<TextView>(R.id.reserva)
         val imate : Bitmap = BitmapFactory.decodeByteArray(MovieList[i].images, 0, MovieList[i]?.images?.size!!)
         image.setImageBitmap(imate)
         nombre.text = MovieList[i].title
         edad.text = MovieList[i].year.toString()
+        if(MovieList[i].reserva == 0){
+            reserva.text  = "No Reservado"
+        }
+        else{
+            reserva.text = "Reserva"
+        }
         println(MovieList[i].title+ "  "+MovieList[i].year.toString())
         return vi
     }

@@ -14,14 +14,23 @@ class MovieDBServices(context: Context) : SQLiteOpenHelper(context, "MovieDBServ
 
         //val sql: String= "drop table Movies"
         //db?.execSQL(sql)
-        val create: String= "Create Table Movies (idUser int primarykey," +
-                "year integer," +
-                "title text," +
-                "sinopsis text," +
-                "images blob);"
+        val create: String= "Create Table Movies (idUser integer primary key autoincrement ," +
+                " year integer," +
+                " title text," +
+                " sinopsis text," +
+                " reserva integer,"+
+                " images blob);"
 
 
+
+
+        val sql: String = "CREATE TABLE Reserva (idUser int primary key ,"+
+                " idPelicula integer primarykey," +
+                " FOREIGN KEY (idUser) REFERENCES users(idUser),"+
+                " FOREIGN KEY (idPelicula) REFERENCES Movies(idUser));"
         db?.execSQL(create)
+        db?.execSQL(sql)
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int)
@@ -58,7 +67,11 @@ class MovieDBServices(context: Context) : SQLiteOpenHelper(context, "MovieDBServ
 
     override fun consultMovies(): List<Movie>?
     {
-        val sql : String = "SELECT idUser, title, year, sinopsis, images FROM Movies"
+       /* val  sql : String = "SELECT m.idUser,m.title,m.year,"+
+                            "m.sinopsis,m.images,r.reserva from Reserva r " +
+                            "inner join Movies m on m.idUser = r.idPelicula"+
+                                    "inner join users u on u.idUser = r.idUser";*/
+        val sql : String = "SELECT idUser, title, year, sinopsis, reserva ,images FROM Movies"
         val result : Cursor = this.executeQuery(sql, this.writableDatabase)
         var listMovies : MutableList<Movie>? = ArrayList<Movie>()
         result.moveToFirst()
@@ -71,7 +84,9 @@ class MovieDBServices(context: Context) : SQLiteOpenHelper(context, "MovieDBServ
                 result.getInt(2),
                 result.getString(1),
                 result.getString(3),
-                result.getBlob(4)
+                result.getInt(4),
+                result.getBlob(5)
+
             )
 
             listMovies?.add(Movie)
@@ -90,6 +105,7 @@ class MovieDBServices(context: Context) : SQLiteOpenHelper(context, "MovieDBServ
         localMovie.put("year", movie.year)
         localMovie.put("sinopsis", movie.sinopsis)
         localMovie.put("images", movie.images)
+
         println("entro a guardar")
         this.executeModification(localMovie)
     }

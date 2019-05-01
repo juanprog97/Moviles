@@ -33,7 +33,7 @@ class SaveMovieActivity : AppCompatActivity(){
         val sinopsis = findViewById<EditText>(R.id.sipnosis);
         if(this.image != null){
             if( TextUtils.isEmpty(title.text.toString())==false && TextUtils.isEmpty(year.text.toString())==false &&  year.text.toString().toIntOrNull()!=null &&TextUtils.isEmpty(sinopsis.text.toString())==false){
-                val movie= Movie(null,year.text.toString().toInt(),title.text.toString(),sinopsis.text.toString(),this.image)
+                val movie= Movie(null,year.text.toString().toInt(),title.text.toString(),sinopsis.text.toString(),0,this.image)
                 title.text.clear()
                 year.text.clear()
                 sinopsis.text.clear()

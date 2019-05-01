@@ -11,13 +11,15 @@ class UserDBServices(context: Context) : SQLiteOpenHelper(context, "UserDBServic
 {
     override fun onCreate(db: SQLiteDatabase?) {
        // val sql :String = "DROP TABLE USERS;" //Primero hacer un drop table y luego el create
-        val sql : String = "CREATE TABLE users(idUser int primarykey," +
+        val sql : String = "CREATE TABLE users(idUser integer  primary key autoincrement ," +
                            " name text," +
                            " email text," +
                            " age integer," +
                            " password text);"
 
         db?.execSQL(sql)
+
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int)
@@ -83,7 +85,7 @@ class UserDBServices(context: Context) : SQLiteOpenHelper(context, "UserDBServic
 
     private fun executeQuery(sql: String, bd : SQLiteDatabase) : Cursor
     {
-        val consulta : Cursor = bd.rawQuery(sql,null)
+        val consulta : Cursor = bd.rawQuery(sql, null)
         return consulta
     }
 
