@@ -12,16 +12,17 @@ class MovieDBServices(context: Context) : SQLiteOpenHelper(context, "MovieDBServ
 
     override fun onCreate(db: SQLiteDatabase?) {
 
-        //val sql: String= "drop table Movies"
-        //db?.execSQL(sql)
-        val create: String= "Create Table Movies (idUser int primarykey," +
+        val sql: String= "drop table Movies"
+        db?.execSQL(sql)
+        /*val create: String= "Create Table Movies (idUser int primarykey," +
                 "year integer," +
                 "title text," +
                 "sinopsis text," +
-                "images blob);"
+                "images blob);"*/
 
 
-        db?.execSQL(create)
+       // db?.execSQL(create)
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int)

@@ -10,7 +10,7 @@ import com.example.apppeliculas.Modelos.User
 class UserDBServices(context: Context) : SQLiteOpenHelper(context, "UserDBService", null, 1), IUserServices
 {
     override fun onCreate(db: SQLiteDatabase?) {
-       // val sql :String = "DROP TABLE USERS;" //Primero hacer un drop table y luego el create
+        //val sql :String = "DROP TABLE USERS;" //Primero hacer un drop table y luego el create
         val sql : String = "CREATE TABLE users(idUser int primarykey," +
                            " name text," +
                            " email text," +
