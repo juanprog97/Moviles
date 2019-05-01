@@ -7,7 +7,7 @@ import com.example.apppeliculas.Modelos.User
 class LoginServices(context: Context)
 {
     private lateinit var user : User
-    private var dbConnection : UserDBServices = UserDBServices(context)
+    private var dbConnection : DBServices = DBServices(context)
     private var sharedConnection : UserReservedServices = UserReservedServices(context)
 
     fun verifyUser(user: User) : Boolean

@@ -7,11 +7,10 @@ import android.text.TextUtils
 import android.util.Patterns
 import android.view.View
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import com.example.apppeliculas.R
 import com.example.apppeliculas.Modelos.User
-import com.example.apppeliculas.Servicios.UserDBServices
+import com.example.apppeliculas.Servicios.DBServices
 
 
 class registerUserActivity : AppCompatActivity() {
@@ -41,12 +40,12 @@ class registerUserActivity : AppCompatActivity() {
             val user = User(null, nombre.text.toString(), correo.text.toString(),edad.text.toString().toInt(), contra.text.toString());
             if(user.email!!.isValidEmail())
             {
-                if( !UserDBServices(this).verifyUser(user)){
+                if( !DBServices(this).verifyUser(user)){
                     nombre.text.clear()
                     contra.text.clear()
                     correo.text.clear()
                     edad.text.clear()
-                    UserDBServices(this).saveUser(user)
+                    DBServices(this).saveUser(user)
                     Toast.makeText(this, "Se ha Guardado Un Usuario", Toast.LENGTH_SHORT).show()
                 }
                 else{

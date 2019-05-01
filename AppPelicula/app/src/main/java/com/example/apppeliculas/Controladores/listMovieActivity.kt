@@ -9,19 +9,18 @@ import android.widget.Toast
 import com.example.apppeliculas.Adapters.MovieListAdapter
 import com.example.apppeliculas.Modelos.Movie
 import com.example.apppeliculas.R
-import com.example.apppeliculas.Servicios.MovieDBServices
-
+import com.example.apppeliculas.Servicios.DBServices
 
 
 class listMovieActivity : AppCompatActivity() {
 
     private lateinit var listView: ListView
-    private lateinit var MovieDBServices : MovieDBServices
+    private lateinit var DBServices : DBServices
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listmovie)
-        MovieDBServices= MovieDBServices(this)
-        val listPosts: List<Movie>? = MovieDBServices(this).consultMovies()
+        DBServices= DBServices(this)
+        val listPosts: List<Movie>? = DBServices(this).consultMovies()
         println(listPosts)
         listView = findViewById<ListView>(R.id.listMovie) as ListView
         val adapter = MovieListAdapter(this, listPosts)

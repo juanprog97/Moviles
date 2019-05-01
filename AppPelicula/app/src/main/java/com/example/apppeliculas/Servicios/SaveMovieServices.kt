@@ -6,7 +6,7 @@ import com.example.apppeliculas.Modelos.Movie
 class SaveMovieServices(context: Context)
 {
 
-    private var dbConnection : MovieDBServices = MovieDBServices(context)
+    private var dbConnection : DBServices = DBServices(context)
     private lateinit var movie : Movie
     //private var sharedConnection : ListMoviesServices = ListMoviesServices(context)
 
