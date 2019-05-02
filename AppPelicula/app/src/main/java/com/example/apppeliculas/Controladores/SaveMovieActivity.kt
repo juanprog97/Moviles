@@ -18,11 +18,13 @@ import com.example.apppeliculas.Servicios.SaveMovieServices
 class SaveMovieActivity : AppCompatActivity(){
     private lateinit var SaveMovieServices : SaveMovieServices
     private  var image: ByteArray? = null
-
+    private var userOnline: Int = -1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_addmovie)
         SaveMovieServices= SaveMovieServices(this)
+        this.userOnline = intent.getIntExtra("IdUser",-1)
+        println(this.userOnline)
 
     }
 
@@ -33,7 +35,7 @@ class SaveMovieActivity : AppCompatActivity(){
         val sinopsis = findViewById<EditText>(R.id.sipnosis);
         if(this.image != null){
             if( TextUtils.isEmpty(title.text.toString())==false && TextUtils.isEmpty(year.text.toString())==false &&  year.text.toString().toIntOrNull()!=null &&TextUtils.isEmpty(sinopsis.text.toString())==false){
-                val movie= Movie(null,year.text.toString().toInt(),title.text.toString(),sinopsis.text.toString(),0,this.image)
+                val movie= Movie(null,year.text.toString().toInt(),title.text.toString(),sinopsis.text.toString(),"no",this.image)
                 title.text.clear()
                 year.text.clear()
                 sinopsis.text.clear()
@@ -58,6 +60,8 @@ class SaveMovieActivity : AppCompatActivity(){
 
     fun volver(view:View){
         val intent = Intent(this,listMovieActivity::class.java)
+        println(this.userOnline)
+        intent.putExtra("IdUser",this.userOnline)
         startActivity(intent)
     }
 

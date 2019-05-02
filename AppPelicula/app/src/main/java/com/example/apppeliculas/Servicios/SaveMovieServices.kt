@@ -24,5 +24,7 @@ class SaveMovieServices(context: Context)
             println("entro")
             dbConnection.saveMovie(movie)
         }
+        dbConnection.close()
     }
+
 }

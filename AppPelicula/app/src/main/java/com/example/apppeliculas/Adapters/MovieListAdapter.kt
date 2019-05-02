@@ -18,7 +18,6 @@ import com.example.apppeliculas.Modelos.Movie
 
 class MovieListAdapter(private val activity: Activity, MovieList: List<Movie>?) : BaseAdapter(){
     private var MovieList = ArrayList<Movie>()
-
     init {
         this.MovieList = MovieList as ArrayList<Movie>
     }
@@ -51,6 +50,15 @@ class MovieListAdapter(private val activity: Activity, MovieList: List<Movie>?) 
         return  MovieList[i].images
     }
 
+    fun getIdPelicula(i:Int): Int?{
+        return MovieList[i].idPeli
+    }
+
+    fun getReserva(i:Int): String?{
+        return  MovieList[i].reserva
+    }
+
+
 
     override fun getView(i: Int, convertView: View?, viewGroup: ViewGroup): View {
         var vi: View
@@ -64,13 +72,14 @@ class MovieListAdapter(private val activity: Activity, MovieList: List<Movie>?) 
         image.setImageBitmap(imate)
         nombre.text = MovieList[i].title
         edad.text = MovieList[i].year.toString()
-        if(MovieList[i].reserva == 0){
+
+
+        if(MovieList[i].reserva == "no"){
             reserva.text  = "No Reservado"
         }
         else{
             reserva.text = "Reserva"
         }
-        println(MovieList[i].title+ "  "+MovieList[i].year.toString())
         return vi
     }
 }

@@ -15,6 +15,9 @@ class UserReservedServices(context: Context) : AppCompatActivity(), IUserService
 
     private var preferencias = context.getSharedPreferences("usuarios", 0)
 
+    override fun consultId(user: User): Int{
+        TODO("not implemented")
+    }
     override fun verifyUser(user: User): Boolean
     {
         var returnValue : Boolean = false

@@ -26,6 +26,9 @@ class MainActivity : AppCompatActivity() {
         if(this.loginServices.verifyUser(user))
         {
             val intent = Intent(this, listMovieActivity::class.java)
+            var idUser: Int = this.loginServices.consultId(user)
+            println(idUser)
+            intent.putExtra("IdUser",idUser)
             startActivity(intent)
         }
         else

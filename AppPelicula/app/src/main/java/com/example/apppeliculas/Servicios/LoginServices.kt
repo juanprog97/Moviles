@@ -24,4 +24,20 @@ class LoginServices(context: Context)
 
         return result
     }
+
+    fun consultId(user: User) : Int
+    {
+        this.user = user
+        var result : Int?
+
+        /*if(sharedConnection.verifyUser(user))
+        {
+            result =  sharedConnection.verifyUser(this.user)
+        }
+        else*/
+        result =  dbConnection.consultId(this.user)
+
+        return result
+    }
+
 }

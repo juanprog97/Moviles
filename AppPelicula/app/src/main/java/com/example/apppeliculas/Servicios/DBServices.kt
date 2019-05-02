@@ -6,9 +6,10 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.apppeliculas.Modelos.Movie
+import com.example.apppeliculas.Modelos.Reserva
 import com.example.apppeliculas.Modelos.User
 
-class DBServices(context: Context) : SQLiteOpenHelper(context, "DBService", null, 1), IUserServices, IMovieServices
+class DBServices(context: Context) : SQLiteOpenHelper(context, "DBService", null, 1), IUserServices, IMovieServices,IReservaServices
 {
     override fun onCreate(db: SQLiteDatabase?) {
         val table1 : String = "CREATE TABLE users(idUser integer  primary key autoincrement ," +
@@ -21,11 +22,18 @@ class DBServices(context: Context) : SQLiteOpenHelper(context, "DBService", null
                            " title text," +
                            " sinopsis text," +
                            " images blob);"
-        val table3: String = "CREATE TABLE Reserva (idUser int primary key ,"+
-                           " idPelicula integer primarykey," +
-                           " reserva integer, "+
+        val table3: String = "CREATE TABLE Reserva (idReserva integer primary key autoincrement ,"+
+                           " idUser integer ,"+
+                           " idPelicula integer ," +
                            " FOREIGN KEY (idUser) REFERENCES users(idUser),"+
-                           " FOREIGN KEY (idPelicula) REFERENCES Movies(idUser));"
+                           " FOREIGN KEY (idPelicula) REFERENCES Movies(idPelicula));"
+
+        /*val drop1:String = "DROP TABLE Movies"
+        val drop2:String = "DROP TABLE users"
+        val drop3:String = "DROP TABLE Reserva"
+        db?.execSQL(drop1)
+        db?.execSQL(drop2)
+        db?.execSQL(drop3)*/
         db?.execSQL(table1)
         db?.execSQL(table2)
         db?.execSQL(table3)
@@ -58,6 +66,42 @@ class DBServices(context: Context) : SQLiteOpenHelper(context, "DBService", null
         return returnValue
     }
 
+    override fun consulReserva(reserva: Reserva):Boolean {
+        val consult : String = "SELECT * FROM Reserva" +
+                " where idUser=${reserva.usuario} and idPelicula=${reserva.pelicula}"
+
+        val result : Cursor = this.executeQuery(consult, this.writableDatabase)
+        var returnValue : Boolean = false
+
+        if(result.moveToFirst())
+        {
+                returnValue = true
+        }
+
+        this.close()
+        return returnValue
+    }
+
+    override fun consultId(user : User) : Int
+    {
+        val sql : String = "SELECT idUser ,email, password FROM users" +
+                " where email='${user.email}'"
+
+        val result : Cursor = this.executeQuery(sql, this.writableDatabase)
+        var returnValue : Int = -1
+
+        if(result.moveToFirst())
+        {
+            if (user.email.equals(result.getString(1)) && user.password.equals(result.getString(2)))
+            {
+                returnValue = result.getString(0).toInt()
+            }
+        }
+
+        this.close()
+        return returnValue
+
+    }
     override fun saveUser(user: User)
     {
         var localUser = ContentValues()
@@ -103,6 +147,7 @@ class DBServices(context: Context) : SQLiteOpenHelper(context, "DBService", null
     private fun executeModificationUser(user: ContentValues)
     {
         val bd = this.writableDatabase
+        println("Se guardo")
        bd.insert("users", null , user)
     }
 
@@ -131,31 +176,59 @@ class DBServices(context: Context) : SQLiteOpenHelper(context, "DBService", null
         return returnValue
     }
 
+    override fun saveReserva(reserva: Reserva){
+        var localUser = ContentValues()
+        localUser.put("idUser", reserva.usuario)
+        localUser.put("idPelicula", reserva.pelicula)
+        this.executeModificationReserva(localUser)
+    }
 
-
-    override fun consultMovies(): List<Movie>?
+    private fun executeModificationReserva(reserva: ContentValues)
     {
-        val  sql : String = "SELECT m.idPelicula ,m.title,m.year,"+
-                "m.sinopsis,m.images,r.reserva, u.idUser from Reserva r " +
-                "inner join Movies m on m.idPelicula  = r.idPelicula "+
-                "inner join users u on u.idUser = r.idUser";
-       // val sql : String = "SELECT idUser, title, year, sinopsis, reserva ,images FROM Movies"
+        val bd = this.writableDatabase
+        bd.insert("Reserva", null , reserva)
+    }
+
+    override fun consultMovies(user:Int): List<Movie>?
+    {
+        /*val  sql : String = "SELECT m.idPelicula ,m.title,m.year,"+
+                "m.sinopsis,m.images,r.reserva, u.idUser from Movies m  " +
+                "inner join Reserva r on m.idPelicula  = r.idPelicula "+
+                "inner join users u on u.idUser = r.idUser";*/
+        val sql : String = "SELECT idPelicula, title, year, sinopsis ,images FROM Movies"
         val result : Cursor = this.executeQuery(sql, this.writableDatabase)
         var listMovies : MutableList<Movie>? = ArrayList<Movie>()
         result.moveToFirst()
 
         while(!result.isAfterLast)
         {
+            val consult : String = "SELECT * FROM Reserva" +
+                    " where idUser=${user} and idPelicula=${result.getInt(0)}"
+            val veri : Cursor = this.executeQuery(consult, this.writableDatabase)
+            var Movie: Movie
+            if(veri.moveToFirst() ) {
+                Movie = Movie(
+                    result.getInt(0),
+                    result.getInt(2),
+                    result.getString(1),
+                    result.getString(3),
+                    ("si"),
+                    result.getBlob(4)
 
-            var Movie : Movie = Movie(
-                result.getInt(0),
-                result.getInt(2),
-                result.getString(1),
-                result.getString(3),
-                result.getInt(5),
-                result.getBlob(4)
+                )
+            }
+            else{
+                    Movie = Movie(
+                    result.getInt(0),
+                    result.getInt(2),
+                    result.getString(1),
+                    result.getString(3),
+                    ("no"),
+                    result.getBlob(4)
 
-            )
+                )
+
+            }
 
             listMovies?.add(Movie)
             result.moveToNext()
@@ -184,6 +257,7 @@ class DBServices(context: Context) : SQLiteOpenHelper(context, "DBService", null
         // bd.execSQL("INSERT INTO users VALUES (null,user.name,user.email,user.age,user.password,user.images)");
         bd.insert("Movies", null , movie)
     }
+
 
     //Seccion de Peliculas
 }
