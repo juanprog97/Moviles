@@ -53,6 +53,11 @@ class listMovieActivity : AppCompatActivity() {
         startActivity(intent)
 
     }
+
+    fun salir(view: View){
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
 }
 
 
