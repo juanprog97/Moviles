@@ -5,6 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/blanco"
         tools:context=".Controladores.MainActivity">
 
     <LinearLayout
@@ -17,7 +18,7 @@
             app:layout_constraintVertical_bias="0.0"
             android:background="@color/AmarilloJaveriana"
             android:gravity="center_vertical"
-            android:layout_height="60dp">
+            android:layout_height="60dp" android:id="@+id/ventana">
 
         <TextView
                 android:text="Velazquez Calvache, Clara Ines"
@@ -32,29 +33,115 @@
     </LinearLayout>
 
 
-    <Button
-            android:layout_width="115dp"
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ventana"
             app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintVertical_bias="0.3"
+            app:layout_constraintHorizontal_bias="1"
             app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout2"
+                android:paddingBottom="40dp" android:paddingTop="40dp"
+                android:paddingRight="60dp" android:paddingLeft="60dp" android:padding="20dp">
+            <Button
+                    android:layout_width="100dp"
+                    android:background="@drawable/buttonround"
+                    android:layout_height="100dp"
+                    android:id="@+id/verHorario"
+                    android:onClick="irCursos"
+                    android:foreground="@mipmap/ic_launcher_foreground" android:layout_marginTop="40dp"/>
+            <TextView
+                    android:text="Mis Cursos"
+                    android:layout_width="110dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/negro"
+                    android:textSize="18dp"
+                    android:layout_height="wrap_content" android:textStyle="bold"/>
 
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@drawable/buttonround"
-            android:layout_height="116dp"
-            android:id="@+id/verHorario"
-            android:foreground="@mipmap/ic_launcher_foreground"/>
-    <Button
-            android:layout_width="115dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintVertical_bias="0.2"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@drawable/buttonround"
-            android:layout_height="116dp"
-            android:id="@+id/configuracion"
-            android:foreground="@mipmap/ic_configuracion_foreground"/>
+            <Button
+                    android:layout_width="100dp"
+                    android:background="@drawable/buttonround"
+                    android:layout_height="100dp"
+                    android:id="@+id/prestamos"
+                    android:foreground="@mipmap/ic_prestamos_foreground" android:layout_marginTop="40dp"/>
+            <TextView
+                    android:text="Mis préstamos"
+                    android:layout_width="133dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/negro"
+                    android:textSize="18dp"
+                    android:layout_height="wrap_content" android:textStyle="bold"/>
+            <Button
+                    android:layout_width="100dp"
+                    android:background="@drawable/buttonround"
+                    android:layout_height="100dp"
+                    android:id="@+id/dispensador"
+                    android:foreground="@mipmap/ic_dispensador_foreground" android:layout_marginTop="40dp"/>
+            <TextView
+                    android:text="Configuracion"
+                    android:layout_width="136dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/negro"
+                    android:textSize="18dp"
+                    android:layout_height="wrap_content" android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="40dp" android:paddingTop="40dp"
+                android:paddingRight="60dp" android:paddingLeft="60dp" android:padding="20dp">
+            <Button
+                    android:layout_width="100dp"
+                    android:background="@drawable/buttonround"
+                    android:layout_height="100dp"
+                    android:id="@+id/cursos"
+                    android:foreground="@mipmap/ic_cursos_foreground" android:layout_marginTop="40dp"/>
+            <TextView
+                    android:text="Mi horario"
+                    android:layout_width="122dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/negro"
+                    android:textSize="18dp"
+                    android:layout_height="wrap_content" android:textStyle="bold"/>
+            <Button
+                    android:layout_width="100dp"
+                    android:background="@drawable/buttonround"
+                    android:layout_height="100dp"
+                    android:id="@+id/busqueda"
+                    android:foreground="@mipmap/ic_busqueda_foreground" android:layout_marginTop="40dp"/>
 
+            <TextView
+                    android:text="Consultar Cursos"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/negro"
+                    android:textSize="18dp"
+                    android:layout_height="wrap_content" android:textStyle="bold"/>
+            <Button
+                    android:layout_width="100dp"
+                    android:background="@drawable/buttonround"
+                    android:layout_height="100dp"
+                    android:id="@+id/configuracion"
+                    android:foreground="@mipmap/ic_configuracion_foreground" android:layout_marginTop="40dp"/>
+            <TextView
+                    android:text="Dispensador"
+                    android:layout_width="154dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/negro"
+                    android:textSize="18dp"
+                    android:layout_height="wrap_content" android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
 
 
 </android.support.constraint.ConstraintLayout>

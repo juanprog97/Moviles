@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">aplicacionMovilUniversidad</string>
+    <string name="title_activity_login_">login_Activity</string>
 </resources>
