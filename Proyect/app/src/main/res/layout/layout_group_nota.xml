@@ -7,7 +7,7 @@
                                              android:focusable="false"
                                              android:focusableInTouchMode="false"
                                              android:orientation="vertical"
-                                             android:background="@color/blanco">
+                                             android:background="@drawable/border_curso">
     <ImageView
             android:layout_height="70dp"
 

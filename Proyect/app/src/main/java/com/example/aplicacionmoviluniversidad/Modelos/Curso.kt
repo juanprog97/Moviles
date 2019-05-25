@@ -4,5 +4,6 @@ data class Curso (
     val nombreCurs: String?,
     val codAsignatura: String?,
     val porcentInam: String?,
-    val notaAcumulada: String?
+    val notaAcumulada: String?,
+    val parciales: List<Nota>?
 )

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
 import android.widget.TextView
 import com.example.aplicacionmoviluniversidad.Modelos.Curso
+import com.example.aplicacionmoviluniversidad.Modelos.Nota
 import com.example.aplicacionmoviluniversidad.R
 
 class cursosExpandibleAdapter(var context: Context, var CursoList : List<Curso>) : BaseExpandableListAdapter(){
@@ -23,7 +24,12 @@ class cursosExpandibleAdapter(var context: Context, var CursoList : List<Curso>)
     override fun getGroup(groupPosition: Int): Any {
         return CursoList[groupPosition]
     }
-
+    fun getNotas(groupPosition: Int): List<Nota>?{
+        return CursoList[groupPosition].parciales
+    }
+    fun getNombre(groupPosition: Int):String?{
+        return CursoList[groupPosition].nombreCurs
+    }
     override fun isChildSelectable(groupPosition: Int, childPosition: Int): Boolean {
        return true
     }
@@ -52,6 +58,8 @@ class cursosExpandibleAdapter(var context: Context, var CursoList : List<Curso>)
     override fun getGroupId(groupPosition: Int): Long {
         return groupPosition.toLong()
     }
+
+
 
     override fun getChildView(groupPosition: Int, childPosition: Int, isLastChild: Boolean, convertView: View?, parent: ViewGroup?): View? {
         var convertView = convertView

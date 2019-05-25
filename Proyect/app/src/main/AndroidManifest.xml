@@ -6,14 +6,14 @@
 
     <application
             android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="AplicacionUniversidadJaveriana"
-            android:roundIcon="@mipmap/ic_logo_round"
+            android:icon="@mipmap/ic_sello"
+            android:label="Aplicacion Universidad Javeriana"
+            android:roundIcon="@mipmap/ic_sello_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
                 android:name=".Controladores.login_Activity"
-                android:label="@string/title_activity_login_"
+                android:label="Javeriana Cali"
                 android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
