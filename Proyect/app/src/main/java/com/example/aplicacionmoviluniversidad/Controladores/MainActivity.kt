@@ -46,4 +46,20 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("email",this.correo )
         startActivity(intent)
     }
+
+    fun irConfiguracion(view:View){
+        val intent = Intent(this, configuracion_Activity::class.java)
+        intent.putExtra("key", this.key)
+        intent.putExtra("token", this.token)
+        intent.putExtra("email",this.correo )
+        startActivity(intent)
+    }
+
+    fun irDispensador(view:View){
+        val intent = Intent(this, dispensador_Activity::class.java)
+        intent.putExtra("key", this.key)
+        intent.putExtra("token", this.token)
+        intent.putExtra("email",this.correo )
+        startActivity(intent)
+    }
 }

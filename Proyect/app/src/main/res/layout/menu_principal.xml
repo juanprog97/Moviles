@@ -88,6 +88,7 @@
                     android:background="@drawable/buttonround"
                     android:layout_height="100dp"
                     android:id="@+id/dispensador"
+                    android:onClick="irDispensador"
                     android:foreground="@drawable/ic_dispensador_foreground" android:layout_marginTop="40dp"/>
             <TextView
                     android:text="Dispensador"
@@ -141,6 +142,7 @@
                     android:background="@drawable/buttonround"
                     android:layout_height="100dp"
                     android:id="@+id/configuracion"
+                    android:onClick="irConfiguracion"
                     android:foreground="@drawable/ic_configuracion_foreground" android:layout_marginTop="40dp"/>
             <TextView
                     android:text="Configuración"

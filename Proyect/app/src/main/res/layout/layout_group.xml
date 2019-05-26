@@ -11,6 +11,7 @@
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:gravity="center"
             android:layout_height="wrap_content">
         <TextView
@@ -25,7 +26,7 @@
         <ImageView
                 android:layout_height="60dp"
 
-                android:src="@mipmap/ic_desplegar_foreground"
+                android:src="@mipmap/ic_desplegar_"
                 android:id="@+id/imageC"
                 android:focusable="false"
                 android:focusableInTouchMode="false"
