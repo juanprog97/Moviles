@@ -38,4 +38,12 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
 
     }
+
+    fun irHorario(view:View){
+        val intent = Intent(this, horario_Activity::class.java)
+        intent.putExtra("key", this.key)
+        intent.putExtra("token", this.token)
+        intent.putExtra("email",this.correo )
+        startActivity(intent)
+    }
 }

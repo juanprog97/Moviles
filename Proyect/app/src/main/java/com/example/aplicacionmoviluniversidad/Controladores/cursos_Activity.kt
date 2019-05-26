@@ -15,6 +15,8 @@ import android.widget.Toast
 import com.example.aplicacionmoviluniversidad.Adaptadores.cursosExpandibleAdapter
 import com.example.aplicacionmoviluniversidad.Adaptadores.listNotasAdapter
 import com.example.aplicacionmoviluniversidad.Modelos.Curso
+import com.example.aplicacionmoviluniversidad.Modelos.DiaClase
+import com.example.aplicacionmoviluniversidad.Modelos.Horario
 import com.example.aplicacionmoviluniversidad.Modelos.Nota
 import com.example.aplicacionmoviluniversidad.R
 import kotlinx.android.synthetic.main.activity_cursos_.*
@@ -43,9 +45,9 @@ class cursos_Activity : AppCompatActivity() {
     }
 
     fun Test(view: View){
-        val nota1 = Nota("Parcial 1",30,4.5)
-        val nota2 = Nota("Parcial 2",30,4.0)
-        val nota3 = Nota("proyecto",40,3.0)
+        val nota1 = Nota("Parcial 1",20,4.0)
+        val nota2 = Nota("Parcial 2",60,3.4)
+        val nota3 = Nota("Proyecto",20,2.2)
         val listNo = arrayListOf<Nota>()
         listNo.add(nota1)
         listNo.add(nota2)
