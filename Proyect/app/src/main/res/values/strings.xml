@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">aplicacionMovilUniversidad</string>
     <string name="title_activity_login_">login_Activity</string>
+    <string name="Horario">Mi horario</string>
+    <string name="Cursos">Mis cursos</string>
+    <string name="Consultar">Consultar cursos</string>
+    <string name="Prestamos">Mis prestamos</string>
+    <string name="Dispensador">Dispensador</string>
+    <string name="Configuracion">Configuracion</string>
 </resources>
