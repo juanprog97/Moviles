@@ -10,6 +10,9 @@ import android.widget.TextView
 import com.example.aplicacionmoviluniversidad.Modelos.Curso
 import com.example.aplicacionmoviluniversidad.Modelos.Nota
 import com.example.aplicacionmoviluniversidad.R
+import java.lang.Math.round
+import java.math.BigDecimal
+import java.math.RoundingMode
 
 class cursosExpandibleAdapter(var context: Context, var CursoList : List<Curso>) : BaseExpandableListAdapter(){
 
@@ -19,16 +22,16 @@ class cursosExpandibleAdapter(var context: Context, var CursoList : List<Curso>)
         this.cursoArray = CursoList as ArrayList<Curso>
     }
     override fun getChildrenCount(groupPosition: Int): Int {
-        return CursoList.size
+        return 1
     }
     override fun getGroup(groupPosition: Int): Any {
         return CursoList[groupPosition]
     }
-    fun getNotas(groupPosition: Int): List<Nota>?{
-        return CursoList[groupPosition].parciales
-    }
+   /* fun getNotas(groupPosition: Int): List<Nota>?{
+        return CursoList[groupPosition].nota
+    }*/
     fun getNombre(groupPosition: Int):String?{
-        return CursoList[groupPosition].nombreCurs
+        return CursoList[groupPosition].nom
     }
     override fun isChildSelectable(groupPosition: Int, childPosition: Int): Boolean {
        return true
@@ -45,7 +48,7 @@ class cursosExpandibleAdapter(var context: Context, var CursoList : List<Curso>)
             convertView = inflater.inflate(R.layout.layout_group, null)
         }
         var nombreCurso =convertView!!.findViewById<TextView>(R.id.nombreCurso)
-        nombreCurso.text =CursoList[groupPosition].nombreCurs
+        nombreCurso.text =CursoList[groupPosition].nom
 
         return convertView
     }
@@ -63,6 +66,7 @@ class cursosExpandibleAdapter(var context: Context, var CursoList : List<Curso>)
 
     override fun getChildView(groupPosition: Int, childPosition: Int, isLastChild: Boolean, convertView: View?, parent: ViewGroup?): View? {
         var convertView = convertView
+
         if(convertView == null){
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             convertView = inflater.inflate(R.layout.layout_child, null)
@@ -72,10 +76,9 @@ class cursosExpandibleAdapter(var context: Context, var CursoList : List<Curso>)
         var codA = convertView!!.findViewById<TextView>(R.id.codAsign)
         var porcei = convertView!!.findViewById<TextView>(R.id.porcentajeina)
         var notaA  = convertView!!.findViewById<TextView>(R.id.notaAcum)
-        codA.text = CursoList[groupPosition].codAsignatura
-        porcei.text = CursoList[groupPosition].porcentInam
-        notaA.text = CursoList[groupPosition].notaAcumulada
-
+        codA.text = CursoList[groupPosition].coda
+        porcei.text = CursoList[groupPosition].porci
+        notaA.text = CursoList[groupPosition].notp.toString().toBigDecimal().setScale(2,RoundingMode.HALF_EVEN).toString()
         return convertView
     }
 

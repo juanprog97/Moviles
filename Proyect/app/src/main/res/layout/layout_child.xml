@@ -7,7 +7,7 @@
                                              android:focusable="false"
                                              android:focusableInTouchMode="false"
                                              android:orientation="vertical"
-                                             android:background="@color/gris">
+                                             android:background="@drawable/border_curso">
 
     <LinearLayout
             android:orientation="vertical"
@@ -18,7 +18,7 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             app:layout_constraintHorizontal_bias="0.05"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
         <LinearLayout
                 android:orientation="horizontal"
@@ -37,7 +37,7 @@
             <TextView
                     android:text="304030204"
                     android:textColor="@color/negro"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/codAsign" android:layout_weight="1"/>
         </LinearLayout>
@@ -56,7 +56,7 @@
             <TextView
                     android:text="20.22222222%"
                     android:textColor="@color/negro"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/porcentajeina" android:layout_weight="1"/>
         </LinearLayout>
@@ -74,7 +74,7 @@
             <TextView
                     android:text="4.2%"
                     android:textColor="@color/negro"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/notaAcum" android:layout_weight="1"/>
         </LinearLayout>

@@ -7,33 +7,31 @@
                 android:focusable="false"
                 android:focusableInTouchMode="false"
                 android:orientation="vertical"
-                android:background="@drawable/border_curso">
-    <ImageView
-            android:layout_height="60dp"
+                android:background="@color/blanco">
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="Desarrollito"
+                android:gravity="center_vertical"
 
-            android:src="@mipmap/ic_desplegar_foreground"
-            android:id="@+id/imageC"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.4"
-            app:layout_constraintHorizontal_bias="0.98"
-            android:layout_width="60dp"/>
-    <TextView
-            android:text="Desarrollito"
-            android:gravity="center_vertical"
-            android:textColor="@color/negro"
-            android:id="@+id/nombreCurso"
-            android:textSize="15dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/imageC"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_width="300dp"
-            android:layout_height="40dp"/>
+                android:textColor="@color/negro"
+                android:id="@+id/nombreCurso"
+                android:textSize="18dp"
+                android:layout_width="300dp"
+                android:layout_height="match_parent" android:textStyle="bold"/>
+        <ImageView
+                android:layout_height="60dp"
+
+                android:src="@mipmap/ic_desplegar_"
+                android:id="@+id/imageC"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:layout_width="60dp"/>
+    </LinearLayout>
 
 
 </android.support.constraint.ConstraintLayout>

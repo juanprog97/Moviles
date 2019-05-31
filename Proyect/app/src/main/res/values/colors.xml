@@ -8,7 +8,19 @@
     <color name="strokeButton">#3C4B80</color>
     <color name="presionadoBoton">#1C0CAF</color>
     <color name="blanco">#FFFFFF</color>
+    <color name="azulLetaHorario">#4285F4</color>
     <color name="negro">#000000</color>
     <color name="border">#7F8C8D</color>
     <color name="gris">#ADADAD</color>
+    <color name="peterRiver">#3598db</color>
+    <color name="Amethyst">#9a59b5</color>
+    <color name="Yellow">#f1c40f</color>
+    <color name="carrot">#e67f22</color>
+    <color name="Alizarin">#e84c3d</color>
+    <color name="wet">#34495e</color>
+    <color name="esmeral">#2dcc70</color>
+
+
+
+
 </resources>

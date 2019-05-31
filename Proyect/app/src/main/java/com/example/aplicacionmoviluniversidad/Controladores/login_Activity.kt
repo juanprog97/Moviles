@@ -35,6 +35,7 @@ class login_Activity : AppCompatActivity() {
         var User= UserModel(user.text.toString(),pass.text.toString(),null,null,null,null,null)
 
         val data = this.loginServices.validate(User)
+        println(data)
         val temp = JSONObject(data)
         if( temp.getString("valido")=="true" ){
             User.nombre= temp.getString("nombre")
