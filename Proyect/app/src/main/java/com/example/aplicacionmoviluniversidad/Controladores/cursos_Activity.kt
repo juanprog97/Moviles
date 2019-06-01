@@ -8,17 +8,15 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ExpandableListView
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.example.aplicacionmoviluniversidad.Adaptadores.cursosExpandibleAdapter
-import com.example.aplicacionmoviluniversidad.Adaptadores.listNotasAdapter
+//import com.example.aplicacionmoviluniversidad.Adaptadores.listNotasAdapter
 import com.example.aplicacionmoviluniversidad.Modelos.Curso
 import com.example.aplicacionmoviluniversidad.Modelos.DiaClase
 import com.example.aplicacionmoviluniversidad.Modelos.Horario
 import com.example.aplicacionmoviluniversidad.Modelos.Nota
 import com.example.aplicacionmoviluniversidad.R
+import com.example.aplicacionmoviluniversidad.Servicios.CursosServices
 import kotlinx.android.synthetic.main.activity_cursos_.*
 import kotlinx.android.synthetic.main.dialog_notas.view.*
 
@@ -26,11 +24,15 @@ class cursos_Activity : AppCompatActivity() {
     private lateinit var correo : String
     private lateinit var key : String
     private lateinit var token: String
+    private lateinit var CursoService : CursosServices
+    private lateinit var listView: LinearLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         this.correo = intent.getStringExtra("email")
         this.key = intent.getStringExtra("key")
         this.token = intent.getStringExtra("token")
         super.onCreate(savedInstanceState)
+        CursoService= CursosServices(this)
         setContentView(R.layout.activity_cursos_)
 
     }
@@ -45,30 +47,9 @@ class cursos_Activity : AppCompatActivity() {
     }
 
     fun Test(view: View){
-        val nota1 = Nota("Parcial 1",20,4.0)
-        val nota2 = Nota("Parcial 2",60,3.4)
-        val nota3 = Nota("Proyecto",20,2.2)
 
-        val nota5 = Nota("Proyecto",20,2.2)
-        val nota6 = Nota("Pr",60,1.2)
-        val nota7 = Nota("Pecto",10,0.2)
+        val lista = this.CursoService.Buscar(this.key,this.token)
 
-        val listNo = arrayListOf<Nota>()
-        val listNo2 = arrayListOf<Nota>()
-        listNo.add(nota1)
-        listNo.add(nota2)
-        listNo.add(nota3)
-
-        listNo2.add(nota5)
-        listNo2.add(nota6)
-        listNo2.add(nota7)
-
-
-        val curs = Curso("Desarrollito","32234243","50%","4.5",listNo)
-        val curs2 = Curso("HOLA","23423423","30%","4.5",listNo2)
-        val lista = arrayListOf<Curso>()
-        lista.add(curs)
-        lista.add(curs2)
         //Testeo
 
         //Este Codigo se debe copiar en la parte principal de del programa//
@@ -77,14 +58,14 @@ class cursos_Activity : AppCompatActivity() {
         var adapter = cursosExpandibleAdapter(this,lista)
         expan.setAdapter(adapter)
         expan.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
-            var nota = adapter.getNotas(groupPosition)  //Retorno el Arreglo de las notas
+            //var nota = adapter.getNotas(groupPosition)  //Retorno el Arreglo de las notas
             val mDialogView = LayoutInflater.from(this).inflate(R.layout.dialog_notas, null)
             val mBuilder = AlertDialog.Builder(this)
                 .setView(mDialogView)
 
             mDialogView.Materia.text = adapter.getNombre(groupPosition)
-            val adapter = listNotasAdapter(this, nota)      //Se actualiza el listView Con los Datos de las notas
-            mDialogView.parciales.adapter = adapter
+            //val adapter = listNotasAdapter(this, nota)      //Se actualiza el listView Con los Datos de las notas
+            //mDialogView.parciales.adapter = adapter
             val mAlertDialog = mBuilder.show()
             mDialogView.cerrar.setOnClickListener {
                 //dismiss dialog
@@ -93,6 +74,13 @@ class cursos_Activity : AppCompatActivity() {
             true
         }
         //Codigo---------------------------------
+    }
+
+    fun ServiceTest(view: View){
+        var data= this.CursoService.Buscar(this.key,this.token)
+        var expan =findViewById<ExpandableListView>(R.id.lvExp)
+        var adapter = cursosExpandibleAdapter(this,data)
+        expan.setAdapter(adapter)
     }
 
 }

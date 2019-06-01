@@ -1,4 +1,4 @@
-package com.example.aplicacionmoviluniversidad.Adaptadores
+/*package com.example.aplicacionmoviluniversidad.Adaptadores
 
 import android.app.Activity
 import android.content.Context
@@ -40,4 +40,4 @@ class listNotasAdapter(private val activity: Activity, Nota:List<Nota>?) : BaseA
         return vi
     }
 
-}
+}*/

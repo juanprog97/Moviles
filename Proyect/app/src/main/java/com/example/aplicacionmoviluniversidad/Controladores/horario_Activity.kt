@@ -9,16 +9,19 @@ import com.example.aplicacionmoviluniversidad.Adaptadores.horarioDayAdapter
 import com.example.aplicacionmoviluniversidad.Modelos.DiaClase
 import com.example.aplicacionmoviluniversidad.Modelos.Horario
 import com.example.aplicacionmoviluniversidad.R
+import com.example.aplicacionmoviluniversidad.Servicios.CursosServices
 
 class horario_Activity : AppCompatActivity() {
     private lateinit var correo : String
     private lateinit var key : String
     private lateinit var token: String
+    private lateinit var CursoService : CursosServices
     override fun onCreate(savedInstanceState: Bundle?) {
         this.correo = intent.getStringExtra("email")
         this.key = intent.getStringExtra("key")
         this.token = intent.getStringExtra("token")
         super.onCreate(savedInstanceState)
+        CursoService= CursosServices(this)
         setContentView(R.layout.activity_horario_)
 
     }
@@ -38,23 +41,29 @@ class horario_Activity : AppCompatActivity() {
             DiaClase(4,"Jueves"),
             DiaClase(5,"Viernes"),
             DiaClase(6,"Sabado") )
-        //Este es el Tipo de dato que debe entrar en la App
+
+        var data= this.CursoService.Buscar(this.key,this.token)
+
+        var temp= data.map { it.horario }
+        /*println(temp)
         val Horarios = mutableListOf(
             mutableListOf<Horario>(
-                Horario("Lagos","10:00 - 12:00",1,"Naturales"),
-                Horario("Saman","1:00 - 2:00",1,"Sociales"),
-                Horario("Saman","1:00 - 8:00",1,"Ambientacion"),
-                Horario("Arrow","1:00 - 1:00",1,"Ofimatica"),
-                Horario("Planta baja","1:00 - 5:00",1,"Recreo"),
-                Horario("Planta alta","6:00 - 5:00",1,"Culto")
+                Horario("Lagos","10:00 - 12:00","1","Naturales","yo","1"),
+                Horario("Saman","1:00 - 2:00","1","Sociales","yo","1"),
+                Horario("Saman","1:00 - 8:00","1","Ambientacion","yo","1"),
+                Horario("Arrow","1:00 - 1:00","1","Ofimatica","yo","1"),
+                Horario("Planta baja","1:00 - 5:00","1","Recreo","yo","1"),
+                Horario("Planta alta","6:00 - 5:00","1","Culto","yo","1")
             ),
-            mutableListOf<Horario>(Horario("CDL","2:00 - 4:00",2,"Gym")),
-            mutableListOf<Horario>(Horario("Linux","2:00 - 4:00",3,"Boxeo")),
-            mutableListOf<Horario>(Horario("UDX","1:00 - 4:00",4,"Jardineria")),
-            mutableListOf<Horario>(Horario("lago","4:00 - 6:00",5,"Cancion")),
+            mutableListOf<Horario>(Horario("CDL","2:00 - 4:00","2","Gym","yo","1")),
+            mutableListOf<Horario>(Horario("Linux","2:00 - 4:00","3","Boxeo","yo","1")),
+            mutableListOf<Horario>(Horario("UDX","1:00 - 4:00","4","Jardineria","yo","1")),
+            mutableListOf<Horario>(Horario("lago","4:00 - 6:00","5","Cancion","yo","1")),
+            mutableListOf<Horario>(temp[0][0]),
             mutableListOf<Horario>())
-        //Testeo
+        Horarios.add(mutableListOf<Horario>(temp[0][0]))
 
+        //Testeo
         //Este Codigo se debe copiar en la parte principal de del programa//
         //Se agregan los datos que viene en la Api al adaptador
 
@@ -64,7 +73,7 @@ class horario_Activity : AppCompatActivity() {
         for(i in 0 until adapter.groupCount){ //Este ciclo hace que se expanda por defecto
             expan.expandGroup(i,true)
 
-        }
+        }*/
 
 
     }

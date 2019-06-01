@@ -28,10 +28,12 @@ class horarioDayAdapter(var context: Context,day:List<DiaClase>,Horario:List<Lis
     }
 
     override fun getChildrenCount(groupPosition: Int): Int {
+        println(Horario[groupPosition].size)
         return Horario[groupPosition].size
     }
 
     override fun getChild(groupPosition: Int, childPosition: Int): Any {
+        println(Horario[groupPosition][childPosition])
         return Horario[groupPosition][childPosition]
     }
 

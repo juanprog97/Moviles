@@ -1,7 +1,10 @@
 package com.example.aplicacionmoviluniversidad.Modelos
 
-data class Nota (
-    val nombre: String?,
-    val porcentaje: Int?,
-    val nota:   Double?
+data class  Nota(
+    val feci: String?,
+    val hora: String?,
+    val saln: String?,
+    val fecf: String?,
+    val doc: String?,
+    val dia: String
 )

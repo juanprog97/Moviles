@@ -10,13 +10,13 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.aplicacionmoviluniversidad.Modelos.UserModel
 import com.example.aplicacionmoviluniversidad.R
-import com.example.aplicacionmoviluniversidad.Servicios.LoginServices
+import com.example.aplicacionmoviluniversidad.Servicios.loginServices
 
 import kotlinx.android.synthetic.main.activity_login_.*
 import org.json.JSONObject
 
 class login_Activity : AppCompatActivity() {
-    private lateinit var loginServices : LoginServices
+    private lateinit var loginServices : loginServices
     override fun onCreate(savedInstanceState: Bundle?) {
         val SDK_INT = android.os.Build.VERSION.SDK_INT
         if (SDK_INT > 8) {
@@ -24,7 +24,7 @@ class login_Activity : AppCompatActivity() {
                 .permitAll().build()
             StrictMode.setThreadPolicy(policy)
         }
-        loginServices= LoginServices(this)
+        loginServices= loginServices(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_)
 
@@ -35,6 +35,7 @@ class login_Activity : AppCompatActivity() {
         var User= UserModel(user.text.toString(),pass.text.toString(),null,null,null,null,null)
 
         val data = this.loginServices.validate(User)
+        println(data)
         val temp = JSONObject(data)
         if( temp.getString("valido")=="true" ){
             User.nombre= temp.getString("nombre")
