@@ -12,6 +12,8 @@
             android:roundIcon="@mipmap/ic_sello_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".Controladores.prestamos_Activity">
+        </activity>
         <activity android:name=".Controladores.dispensador_Activity">
         </activity>
         <activity android:name=".Controladores.configuracion_Activity">
