@@ -10,6 +10,9 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.net.HttpURLConnection
 import java.net.URL
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class CursosServices(context: Context) {
@@ -31,6 +34,11 @@ class CursosServices(context: Context) {
     }
 
     fun OrganizarHorario(cursos: List<Curso>): List<List<Horario>>{
+        var date = Date();
+        val formatter = SimpleDateFormat("yyyy-MM-dd")
+        val answer = formatter.format(date)
+        val dateActual: Date = formatter.parse(answer)
+
         val Horarios = mutableListOf(
             mutableListOf<Horario>(),
             mutableListOf<Horario>(),
@@ -44,11 +52,18 @@ class CursosServices(context: Context) {
             var tmpHorario = cursos[i].horario
 
             for(j in 0 until tmpHorario.size){
-                val horaAdd = Horario(tmpHorario[j].saln,tmpHorario[j].hora,tmpHorario[j].dia-1,cursos[i].nom)
-                println(tmpHorario[j].dia)
-                Horarios[tmpHorario[j].dia-1].add(horaAdd)
+                if(tmpHorario[j].dia != 0){
+                    val ini: String = tmpHorario[j].feci!!
+                    val fin: String = tmpHorario[j].fecf!!
+                    val iniF: Date  = formatter.parse(ini)
+                    val finF: Date  = formatter.parse(fin)
+                    if(dateActual >= iniF && dateActual<=finF){
+                        val horaAdd = Horario(tmpHorario[j].saln,tmpHorario[j].hora,tmpHorario[j].dia-1,cursos[i].nom)
+                        println(tmpHorario[j].dia)
+                        Horarios[tmpHorario[j].dia-1].add(horaAdd)
+                    }
+                }
             }
-
         }
         return Horarios
     }
