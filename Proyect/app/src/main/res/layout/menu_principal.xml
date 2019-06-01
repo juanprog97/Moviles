@@ -128,6 +128,7 @@
                     android:background="@drawable/buttonround"
                     android:layout_height="100dp"
                     android:id="@+id/prestamos"
+                    android:onClick="irPrestamos"
                     android:foreground="@drawable/ic_prestamos_foreground" android:layout_marginTop="40dp"/>
             <TextView
                     android:text="Mis préstamos"

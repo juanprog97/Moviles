@@ -62,4 +62,11 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("email",this.correo )
         startActivity(intent)
     }
+    fun irPrestamos(view:View){
+        val intent = Intent(this, prestamos_Activity::class.java)
+        intent.putExtra("key", this.key)
+        intent.putExtra("token", this.token)
+        intent.putExtra("email",this.correo )
+        startActivity(intent)
+    }
 }
