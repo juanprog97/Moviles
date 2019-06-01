@@ -25,4 +25,8 @@ class prestamos_Activity : AppCompatActivity() {
         intent.putExtra("email", this.correo)
         startActivity(intent)
     }
+
+    fun test(view: View){
+        println("sds")
+    }
 }

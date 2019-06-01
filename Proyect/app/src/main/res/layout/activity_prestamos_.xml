@@ -19,12 +19,10 @@
                 android:minHeight="80dp" app:titleMarginEnd="@android:dimen/notification_large_icon_height"
                 app:titleMargin="@dimen/fab_margin"
                 app:titleMarginStart="@android:dimen/notification_large_icon_height"/>
-        <ExpandableListView
-                android:id="@+id/HorExp"
-                android:layout_height="match_parent"
-                android:scrollbarAlwaysDrawVerticalTrack="true"
+        <ListView
                 android:layout_width="match_parent"
-                android:overScrollMode="ifContentScrolls"/>
+                android:id="@+id/listaPrestamo"
+                android:layout_height="match_parent"/>
     </LinearLayout>
     <ImageView
             android:layout_width="60dp"

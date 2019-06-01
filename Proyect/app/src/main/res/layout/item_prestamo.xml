@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="@color/blanco"
+            android:layout_height="wrap_content">
+        <ImageView
+                android:layout_width="wrap_content"
+                app:srcCompat="@drawable/ic_book_foreground"
+                android:layout_height="match_parent"
+                android:layout_weight="wrap_content"/>
+        <LinearLayout
+                android:orientation="vertical"
+                android:background="@drawable/line_dispen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:text="Título y Autor:"
+                    android:textColor="@color/negro"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:text="Obras de Juan de Castellano(V3)"
+                    android:textStyle="normal"
+                    android:textColor="@color/negro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/nombreTitulo"/>
+            <TextView
+                    android:text="ISBN/ISSN:"
+                    android:textColor="@color/negro"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            <TextView
+                    android:text="861.3c348o V3"
+                    android:textColor="@color/negro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/isb"/>
+            <TextView
+                    android:text="Ubicación"
+                    android:textColor="@color/negro"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView7"/>
+            <TextView
+                    android:text="Biblioteca General"
+                    android:textColor="@color/negro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/ubicacion"/>
+            <TextView
+                    android:text="Multa:"
+                    android:textColor="@color/negro"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                <TextView
+                        android:text="$"
+                        android:textColor="@color/negro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:text="0"
+                        android:textColor="@color/negro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/valorMulta" android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
