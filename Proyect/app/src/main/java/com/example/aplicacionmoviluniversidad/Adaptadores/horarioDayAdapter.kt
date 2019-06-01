@@ -87,7 +87,7 @@ class horarioDayAdapter(var context: Context,day:List<DiaClase>,Horario:List<Lis
             this.cont+=1
 
         }
-        
+
         return convertView
     }
 
