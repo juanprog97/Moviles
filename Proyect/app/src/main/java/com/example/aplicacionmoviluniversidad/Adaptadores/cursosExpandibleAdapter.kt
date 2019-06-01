@@ -19,7 +19,7 @@ class cursosExpandibleAdapter(var context: Context, var CursoList : List<Curso>)
         this.cursoArray = CursoList as ArrayList<Curso>
     }
     override fun getChildrenCount(groupPosition: Int): Int {
-        return CursoList.size
+        return 1
     }
     override fun getGroup(groupPosition: Int): Any {
         return CursoList[groupPosition]

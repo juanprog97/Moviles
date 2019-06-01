@@ -57,6 +57,7 @@ class horario_Activity : AppCompatActivity() {
 
         //Este Codigo se debe copiar en la parte principal de del programa//
         //Se agregan los datos que viene en la Api al adaptador
+
         var expan =findViewById<ExpandableListView>(R.id.HorExp)
         var adapter = horarioDayAdapter(this,dias,Horarios)
         expan.setAdapter(adapter)

@@ -48,13 +48,27 @@ class cursos_Activity : AppCompatActivity() {
         val nota1 = Nota("Parcial 1",20,4.0)
         val nota2 = Nota("Parcial 2",60,3.4)
         val nota3 = Nota("Proyecto",20,2.2)
+
+        val nota5 = Nota("Proyecto",20,2.2)
+        val nota6 = Nota("Pr",60,1.2)
+        val nota7 = Nota("Pecto",10,0.2)
+
         val listNo = arrayListOf<Nota>()
+        val listNo2 = arrayListOf<Nota>()
         listNo.add(nota1)
         listNo.add(nota2)
         listNo.add(nota3)
+
+        listNo2.add(nota5)
+        listNo2.add(nota6)
+        listNo2.add(nota7)
+
+
         val curs = Curso("Desarrollito","32234243","50%","4.5",listNo)
+        val curs2 = Curso("HOLA","23423423","30%","4.5",listNo2)
         val lista = arrayListOf<Curso>()
         lista.add(curs)
+        lista.add(curs2)
         //Testeo
 
         //Este Codigo se debe copiar en la parte principal de del programa//
