@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.os.StrictMode
 import com.example.aplicacionmoviluniversidad.Modelos.Curso
+import com.example.aplicacionmoviluniversidad.Modelos.Horario
 import com.example.aplicacionmoviluniversidad.Modelos.UserModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -27,6 +28,29 @@ class CursosServices(context: Context) {
         connection2.setRequestProperty(llave,token)
         val data2 = connection2.inputStream.bufferedReader().readText()
         return Gson()?.fromJson(data2, object : TypeToken<List<Curso>>(){}.type)
+    }
+
+    fun OrganizarHorario(cursos: List<Curso>): List<List<Horario>>{
+        val Horarios = mutableListOf(
+            mutableListOf<Horario>(),
+            mutableListOf<Horario>(),
+            mutableListOf<Horario>(),
+            mutableListOf<Horario>(),
+            mutableListOf<Horario>(),
+            mutableListOf<Horario>(),
+            mutableListOf<Horario>())
+        for(i in 0 until cursos.size){
+
+            var tmpHorario = cursos[i].horario
+
+            for(j in 0 until tmpHorario.size){
+                val horaAdd = Horario(tmpHorario[j].saln,tmpHorario[j].hora,tmpHorario[j].dia-1,cursos[i].nom)
+                println(tmpHorario[j].dia)
+                Horarios[tmpHorario[j].dia-1].add(horaAdd)
+            }
+
+        }
+        return Horarios
     }
 
 }

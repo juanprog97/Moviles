@@ -49,7 +49,7 @@ class cursos_Activity : AppCompatActivity() {
     fun Test(view: View){
 
         val lista = this.CursoService.Buscar(this.key,this.token)
-
+        println(lista)
         //Testeo
 
         //Este Codigo se debe copiar en la parte principal de del programa//

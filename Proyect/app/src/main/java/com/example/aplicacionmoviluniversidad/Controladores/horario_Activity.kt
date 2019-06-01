@@ -43,37 +43,20 @@ class horario_Activity : AppCompatActivity() {
             DiaClase(6,"Sabado") )
 
         var data= this.CursoService.Buscar(this.key,this.token)
+        var convert = this.CursoService.OrganizarHorario(data)
 
-        var temp= data.map { it.horario }
-        /*println(temp)
-        val Horarios = mutableListOf(
-            mutableListOf<Horario>(
-                Horario("Lagos","10:00 - 12:00","1","Naturales","yo","1"),
-                Horario("Saman","1:00 - 2:00","1","Sociales","yo","1"),
-                Horario("Saman","1:00 - 8:00","1","Ambientacion","yo","1"),
-                Horario("Arrow","1:00 - 1:00","1","Ofimatica","yo","1"),
-                Horario("Planta baja","1:00 - 5:00","1","Recreo","yo","1"),
-                Horario("Planta alta","6:00 - 5:00","1","Culto","yo","1")
-            ),
-            mutableListOf<Horario>(Horario("CDL","2:00 - 4:00","2","Gym","yo","1")),
-            mutableListOf<Horario>(Horario("Linux","2:00 - 4:00","3","Boxeo","yo","1")),
-            mutableListOf<Horario>(Horario("UDX","1:00 - 4:00","4","Jardineria","yo","1")),
-            mutableListOf<Horario>(Horario("lago","4:00 - 6:00","5","Cancion","yo","1")),
-            mutableListOf<Horario>(temp[0][0]),
-            mutableListOf<Horario>())
-        Horarios.add(mutableListOf<Horario>(temp[0][0]))
 
         //Testeo
         //Este Codigo se debe copiar en la parte principal de del programa//
         //Se agregan los datos que viene en la Api al adaptador
 
         var expan =findViewById<ExpandableListView>(R.id.HorExp)
-        var adapter = horarioDayAdapter(this,dias,Horarios)
+        var adapter = horarioDayAdapter(this,dias,convert)
         expan.setAdapter(adapter)
         for(i in 0 until adapter.groupCount){ //Este ciclo hace que se expanda por defecto
             expan.expandGroup(i,true)
 
-        }*/
+        }
 
 
     }

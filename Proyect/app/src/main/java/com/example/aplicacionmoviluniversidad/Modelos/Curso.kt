@@ -9,7 +9,7 @@ data class Curso (
     val porci: String?,
     val class_section: String?,
     val crse_id: String?,
-    val horario: List<Horario>,
+    val horario: List<HorarioApi>,
     val nota: List<Int>?,
     val parciales: List<String>?
 )

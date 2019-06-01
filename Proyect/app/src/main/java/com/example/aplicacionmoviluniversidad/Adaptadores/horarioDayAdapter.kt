@@ -15,6 +15,8 @@ import android.widget.TextView
 import com.example.aplicacionmoviluniversidad.Modelos.DiaClase
 import com.example.aplicacionmoviluniversidad.Modelos.Horario
 import com.example.aplicacionmoviluniversidad.R
+import java.util.*
+import kotlin.collections.ArrayList
 
 class horarioDayAdapter(var context: Context,day:List<DiaClase>,Horario:List<List<Horario>>): BaseExpandableListAdapter() {
     private var Horario = ArrayList<ArrayList<Horario>>()
@@ -49,7 +51,16 @@ class horarioDayAdapter(var context: Context,day:List<DiaClase>,Horario:List<Lis
         parent: ViewGroup?
     ): View {
         var convertView = convertView
-        var color = mutableListOf<String>("#3598db","#9a59b5","#f1c40f","#e67f22","#e84c3d","#34495e")
+        var base_color =  mutableListOf<Int>(R.drawable.ic_base,
+                                             R.drawable.ic_base2,
+                                             R.drawable.ic_base3,
+                                             R.drawable.ic_base4,
+                                             R.drawable.ic_base5,
+                                             R.drawable.ic_base6,
+                                             R.drawable.ic_base7,
+                                             R.drawable.ic_base8,
+                                             R.drawable.ic_base9,
+                                             R.drawable.ic_base10)
         if(convertView == null){
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             convertView = inflater.inflate(R.layout.item_base_horario, null)
@@ -63,20 +74,8 @@ class horarioDayAdapter(var context: Context,day:List<DiaClase>,Horario:List<Lis
         nombre.text = Horario[groupPosition][childPosition].nombre
         hora.text = Horario[groupPosition][childPosition].hora
         salon.text = Horario[groupPosition][childPosition].salon
-        if(childPosition == 0)
-            fon.setBackgroundResource(R.drawable.ic_base)
-        else if(childPosition==1)
-            fon.setBackgroundResource(R.drawable.ic_base2)
-        else if(childPosition==2)
-            fon.setBackgroundResource(R.drawable.ic_base4)
-        else if(childPosition==3)
-            fon.setBackgroundResource(R.drawable.ic_base3)
-        else if(childPosition==4)
-            fon.setBackgroundResource(R.drawable.ic_base6)
-        else if(childPosition==5)
-            fon.setBackgroundResource(R.drawable.ic_base5)
-
-
+        fon.setBackgroundResource(base_color[childPosition])
+        
         return convertView
     }
 
