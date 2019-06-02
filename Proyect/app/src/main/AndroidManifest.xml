@@ -12,17 +12,25 @@
             android:roundIcon="@mipmap/ic_sello_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Controladores.prestamos_Activity"
-                  android:theme="@style/NoActionBar">
+        <activity
+                android:name=".Controladores.anunciones_Activity"
+                android:theme="@style/NoActionBar">
         </activity>
-        <activity android:name=".Controladores.dispensador_Activity"
-                  android:theme="@style/NoActionBar">
+        <activity
+                android:name=".Controladores.prestamos_Activity"
+                android:theme="@style/NoActionBar">
         </activity>
-        <activity android:name=".Controladores.configuracion_Activity"
-                  android:theme="@style/NoActionBar">
+        <activity
+                android:name=".Controladores.dispensador_Activity"
+                android:theme="@style/NoActionBar">
         </activity>
-        <activity android:name=".Controladores.horario_Activity"
-                  android:theme="@style/NoActionBar">
+        <activity
+                android:name=".Controladores.configuracion_Activity"
+                android:theme="@style/NoActionBar">
+        </activity>
+        <activity
+                android:name=".Controladores.horario_Activity"
+                android:theme="@style/NoActionBar">
         </activity>
         <activity
                 android:name=".Controladores.login_Activity"
@@ -34,10 +42,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Controladores.cursos_Activity"
-                  android:theme="@style/NoActionBar"/>
-        <activity android:name=".Controladores.MainActivity"
-                  android:theme="@style/NoActionBar2">
+        <activity
+                android:name=".Controladores.cursos_Activity"
+                android:theme="@style/NoActionBar"/>
+        <activity
+                android:name=".Controladores.MainActivity"
+                android:theme="@style/NoActionBar2">
         </activity>
     </application>
 

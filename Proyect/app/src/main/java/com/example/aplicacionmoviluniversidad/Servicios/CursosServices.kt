@@ -1,8 +1,10 @@
 package com.example.aplicacionmoviluniversidad.Servicios
 
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.os.StrictMode
+import android.support.annotation.RequiresApi
 import com.example.aplicacionmoviluniversidad.Modelos.Curso
 import com.example.aplicacionmoviluniversidad.Modelos.Horario
 import com.example.aplicacionmoviluniversidad.Modelos.UserModel
@@ -11,7 +13,9 @@ import com.google.gson.reflect.TypeToken
 import java.net.HttpURLConnection
 import java.net.URL
 import java.text.SimpleDateFormat
+import java.time.LocalDate
 import java.time.LocalDateTime
+import java.time.Month
 import java.time.format.DateTimeFormatter
 import java.util.*
 
@@ -33,12 +37,13 @@ class CursosServices(context: Context) {
         return Gson()?.fromJson(data2, object : TypeToken<List<Curso>>(){}.type)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun OrganizarHorario(cursos: List<Curso>): List<List<Horario>>{
+        var mes ="2019-04-12"
         var date = Date();
         val formatter = SimpleDateFormat("yyyy-MM-dd")
         val answer = formatter.format(date)
-        val dateActual: Date = formatter.parse(answer)
-
+        val dateActual: Date = formatter.parse("2019-04-12")
         val Horarios = mutableListOf(
             mutableListOf<Horario>(),
             mutableListOf<Horario>(),

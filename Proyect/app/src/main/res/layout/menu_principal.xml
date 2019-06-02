@@ -74,11 +74,12 @@
                     android:layout_width="100dp"
                     android:background="@drawable/buttonround"
                     android:layout_height="100dp"
+                    android:onClick="irAnunciones"
                     android:id="@+id/busqueda"
-                    android:foreground="@drawable/ic_busqueda_foreground" android:layout_marginTop="40dp"/>
+                    android:foreground="@drawable/ic_anuncios_foreground" android:layout_marginTop="40dp"/>
 
             <TextView
-                    android:text="Consultar Cursos"
+                    android:text="Anuncios"
                     android:layout_width="match_parent"
                     android:gravity="center_horizontal"
                     android:textColor="@color/negro"
