@@ -9,7 +9,7 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import com.example.aplicacionmoviluniversidad.Modelos.LibroPrestamo
 import com.example.aplicacionmoviluniversidad.R
-import org.w3c.dom.Text
+
 
 class prestamosAdapter(private val activity: Activity, prestamos:List<LibroPrestamo> ): BaseAdapter() {
     private var prestamos = ArrayList<LibroPrestamo>()

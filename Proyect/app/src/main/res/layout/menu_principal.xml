@@ -8,6 +8,8 @@
         android:background="@color/blanco"
         tools:context=".Controladores.MainActivity">
 
+
+
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
