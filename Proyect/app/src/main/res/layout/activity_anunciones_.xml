@@ -21,11 +21,18 @@
                 app:titleMarginStart="@android:dimen/notification_large_icon_height"/>
 
         <android.support.design.widget.TabLayout
-                android:id="@+id/tab_layout"
+                android:id="@+id/tab_anuncios"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:tabMode="fixed"
+                app:tabTextColor="@color/blanco"
+                android:background="@color/AzulJaverianaDrow"
+                app:tabIndicatorColor="@color/AmarilloJaveriana"
                 app:tabGravity="fill"/>
+        <android.support.v4.view.ViewPager
+                android:id="@+id/viewA"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
     </LinearLayout>
     <ImageView
             android:layout_width="60dp"

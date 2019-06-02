@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:background="@color/blanco"
+                android:layout_height="wrap_content">
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" tools:srcCompat="@tools:sample/avatars"
+                    android:id="@+id/imageNotice"/>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_marginLeft="14dp"
+                    android:layout_width="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_height="match_parent">
+                <TextView
+                        android:text="Año Sabatico en la U"
+                        android:layout_width="wrap_content"
+                        android:textSize="20dp"
+                        android:textColor="@color/negro"
+                        android:textStyle="bold"
+                        android:layout_height="wrap_content" android:id="@+id/textView2"/>
+                <TextView
+                        android:text="asdasklñdkañskdñalskdñaskdñaskñdsakñldkñaskdñaskñdkasñldkñlaskdñaskdñlaskñldaksñdkañsasdkñaskdñlaskñaskdñla"
+                        android:textSize="15dp"
+                        android:layout_marginTop="10dp"
+                        android:textStyle="normal"
+                        android:textColor="@color/negro"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:id="@+id/textView4"/>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

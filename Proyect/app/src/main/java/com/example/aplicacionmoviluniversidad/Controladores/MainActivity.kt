@@ -69,4 +69,12 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("email",this.correo )
         startActivity(intent)
     }
+
+    fun irAnunciones(view:View){
+        val intent = Intent(this, anunciones_Activity::class.java)
+        intent.putExtra("key", this.key)
+        intent.putExtra("token", this.token)
+        intent.putExtra("email",this.correo )
+        startActivity(intent)
+    }
 }
