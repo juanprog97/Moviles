@@ -27,9 +27,12 @@ class cursosExpandibleAdapter(var context: Context, var CursoList : List<Curso>)
     override fun getGroup(groupPosition: Int): Any {
         return CursoList[groupPosition]
     }
-   /* fun getNotas(groupPosition: Int): List<Nota>?{
+    fun getNotas(groupPosition: Int): List<Double>?{
         return CursoList[groupPosition].nota
-    }*/
+    }
+    fun getParciales(groupPosition: Int): List<String>?{
+       return  CursoList[groupPosition].parciales
+   }
     fun getNombre(groupPosition: Int):String?{
         return CursoList[groupPosition].nom
     }
