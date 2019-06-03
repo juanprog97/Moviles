@@ -10,8 +10,8 @@ class TabPagerAdapter(fm:FragmentManager,  private var tabCount: Int): FragmentP
 
     override fun getItem(position: Int): Fragment? {
         when (position) {
-            0 -> return events_Activity()
-            1 -> return notices_Activity()
+            0 -> return notices_Activity()
+            1 -> return events_Activity()
             else -> return null
         }
     }

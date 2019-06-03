@@ -47,7 +47,7 @@
             android:onClick="regresar"
             android:layout_height="50dp"/>
     <TextView android:layout_width="wrap_content"
-              android:text="Préstamos"
+              android:text="Prestamos"
               android:textSize="20dp"
               android:textColor="@color/blanco"
               app:layout_constraintBottom_toBottomOf="parent"

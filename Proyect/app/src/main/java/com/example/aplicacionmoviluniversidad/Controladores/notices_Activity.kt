@@ -4,16 +4,27 @@ import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.aplicacionmoviluniversidad.Adaptadores.listNoticiasAdapter
 import com.example.aplicacionmoviluniversidad.R
+import com.example.aplicacionmoviluniversidad.Servicios.anunciosServices
 
 
-class notices_Activity : Fragment() {
+class notices_Activity() : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater?.inflate(R.layout.fragment_notices_, container, false)
+        val vi: View
+        vi = inflater?.inflate(R.layout.fragment_notices_, container, false)
+        val recycle = vi.findViewById<RecyclerView>(R.id.noticias)
+        recycle.layoutManager = LinearLayoutManager(context)
+        val Serviceanuncio = anunciosServices(context!!)
+        var anuncios = Serviceanuncio.desplegarAnuncios()
+        var anuncioNoticia = Serviceanuncio.extraerNoticias(anuncios.rows)
+        recycle.adapter = listNoticiasAdapter(anuncioNoticia)
+        return vi
     }
 
 }
