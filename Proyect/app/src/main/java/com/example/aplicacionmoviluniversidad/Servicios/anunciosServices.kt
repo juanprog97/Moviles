@@ -19,7 +19,6 @@ class anunciosServices(context: Context) {
         }
         val connection = URL("http://replica.javerianacali.edu.co:8100/WSMobile/mobile/v2/noticias?page=1&limit=50&filter=").openConnection() as HttpURLConnection
         val data = connection.inputStream.bufferedReader().readText()
-        println(data)
         return Gson()?.fromJson(data, object : TypeToken<Information>(){}.type)
 
     }
