@@ -6,7 +6,7 @@ data class LibroPrestamo (
     val stopo: String?,
     val fecp: String?,
     val fecd: String?,
-    val mult: Int,
+    val mult: String?,
     val loca: String
 
 )

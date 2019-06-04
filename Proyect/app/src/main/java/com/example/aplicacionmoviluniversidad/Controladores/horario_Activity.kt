@@ -24,16 +24,6 @@ class horario_Activity : AppCompatActivity() {
         CursoService= CursosServices(this)
         setContentView(R.layout.activity_horario_)
 
-    }
-    fun regresar(view: View){
-        val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("key", this.key)
-        intent.putExtra("token", this.token)
-        intent.putExtra("email",this.correo )
-        startActivity(intent)
-
-    }
-    fun Test(view: View){
         //Los Headers
         val dias = mutableListOf( DiaClase(1,"Lunes"),
             DiaClase(2,"Martes"),
@@ -58,6 +48,13 @@ class horario_Activity : AppCompatActivity() {
 
         }
 
+    }
+    fun regresar(view: View){
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("key", this.key)
+        intent.putExtra("token", this.token)
+        intent.putExtra("email",this.correo )
+        startActivity(intent)
 
     }
 }
