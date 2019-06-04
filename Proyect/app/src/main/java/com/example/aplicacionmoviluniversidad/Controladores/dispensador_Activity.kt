@@ -20,6 +20,15 @@ class dispensador_Activity : AppCompatActivity() {
         this.token = intent.getStringExtra("token")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dispensador_)
+
+        val listas = arrayListOf<Dispensador>()
+        val lugar1 = Dispensador("Saman",0)
+        val lugar2 = Dispensador("Palmas",0)
+        listas.add(lugar2)
+        listas.add(lugar1)
+        var lista = findViewById<ListView>(R.id.dispen)
+        var adapter = listDispensadorAdapter(this,listas)
+        lista.adapter = adapter
     }
 
     fun regresar(view: View){
@@ -29,19 +38,5 @@ class dispensador_Activity : AppCompatActivity() {
         intent.putExtra("email",this.correo )
         startActivity(intent)
 
-    }
-    fun Test(view:View){
-        val listas = arrayListOf<Dispensador>()
-        val lugar1 = Dispensador("Saman",5)
-        val lugar2 = Dispensador("Lago",0)
-        val lugar3 = Dispensador("Almendro",0)
-        val lugar4 = Dispensador("Cdl",8)
-        listas.add(lugar1)
-        listas.add(lugar2)
-        listas.add(lugar3)
-        listas.add(lugar4)
-        var lista = findViewById<ListView>(R.id.dispen)
-        var adapter = listDispensadorAdapter(this,listas)
-        lista.adapter = adapter
     }
 }

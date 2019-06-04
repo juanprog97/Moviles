@@ -35,19 +35,6 @@ class cursos_Activity : AppCompatActivity() {
         CursoService= CursosServices(this)
         setContentView(R.layout.activity_cursos_)
 
-    }
-
-    fun regresar(view: View){
-        val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("key", this.key)
-        intent.putExtra("token", this.token)
-        intent.putExtra("email",this.correo )
-        startActivity(intent)
-
-    }
-
-    fun Test(view: View){
-
         val lista = this.CursoService.Buscar(this.key,this.token)
         println(lista)
         //Testeo
@@ -73,15 +60,18 @@ class cursos_Activity : AppCompatActivity() {
             }
             true
         }
-        //Codigo---------------------------------
+
     }
 
-    fun ServiceTest(view: View){
-        var data= this.CursoService.Buscar(this.key,this.token)
-        var expan =findViewById<ExpandableListView>(R.id.lvExp)
-        var adapter = cursosExpandibleAdapter(this,data)
-        expan.setAdapter(adapter)
+    fun regresar(view: View){
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("key", this.key)
+        intent.putExtra("token", this.token)
+        intent.putExtra("email",this.correo )
+        startActivity(intent)
+
     }
+
 
 }
 
