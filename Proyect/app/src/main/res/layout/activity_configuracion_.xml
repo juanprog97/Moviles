@@ -48,6 +48,7 @@
                     android:textColor="@color/negro"
                     android:gravity="center_vertical"
                     android:textSize="20dp"
+                    android:onClick="salir"
                     android:background="@drawable/line"
                     android:drawableLeft="@drawable/ic_logout_foreground"
                     android:layout_width="match_parent"

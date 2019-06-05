@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("token", this.token)
         intent.putExtra("email",this.correo )
         startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
 
     }
 
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("token", this.token)
         intent.putExtra("email",this.correo )
         startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
     }
 
     fun irConfiguracion(view:View){
@@ -53,6 +55,7 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("token", this.token)
         intent.putExtra("email",this.correo )
         startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
     }
 
     fun irDispensador(view:View){
@@ -61,6 +64,7 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("token", this.token)
         intent.putExtra("email",this.correo )
         startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
     }
     fun irPrestamos(view:View){
         val intent = Intent(this, prestamos_Activity::class.java)
@@ -68,6 +72,7 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("token", this.token)
         intent.putExtra("email",this.correo )
         startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
     }
 
     fun irAnunciones(view:View){
@@ -76,5 +81,6 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("token", this.token)
         intent.putExtra("email",this.correo )
         startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
     }
 }

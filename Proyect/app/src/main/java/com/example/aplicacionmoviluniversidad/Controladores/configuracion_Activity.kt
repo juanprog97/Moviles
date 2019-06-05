@@ -24,4 +24,9 @@ class configuracion_Activity : AppCompatActivity() {
         intent.putExtra("email",this.correo )
         startActivity(intent)
     }
+
+    fun salir(view: View){
+        val intent = Intent(this, login_Activity::class.java)
+        startActivity(intent)
+    }
 }

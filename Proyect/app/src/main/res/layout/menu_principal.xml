@@ -9,7 +9,6 @@
         tools:context=".Controladores.MainActivity">
 
 
-
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -52,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/linearLayout2"
-                >
+        >
             <Button
                     android:layout_width="100dp"
                     android:background="@drawable/buttonround"
@@ -117,7 +116,7 @@
                     android:layout_height="100dp"
                     android:id="@+id/cursos"
                     android:onClick="irCursos"
-                    android:foreground="@drawable/ic_cursos_foreground" />
+                    android:foreground="@drawable/ic_cursos_foreground"/>
             <TextView
                     android:text="Mis cursos"
                     android:layout_width="match_parent"
