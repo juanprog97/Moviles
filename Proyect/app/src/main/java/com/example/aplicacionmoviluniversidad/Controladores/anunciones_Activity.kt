@@ -56,9 +56,6 @@ class anunciones_Activity : AppCompatActivity() {
 
     fun regresar(view: View){
         val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("key", this.key)
-        intent.putExtra("token", this.token)
-        intent.putExtra("email",this.correo )
         startActivity(intent)
 
     }

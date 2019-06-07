@@ -1,11 +1,13 @@
 package com.example.aplicacionmoviluniversidad.Modelos
 
 data class UserModel (
-    val user: String,
-    val password: String?,
     var nombre: String?,
+    var user: String?,
+    var password: String?,
     var apellido: String?,
     var email: String?,
-    var cod: String?,
-    var toke: String?
+    val periodo: String?,
+    var emplid: String?,
+    var nametoken: String?,
+    var value: String?
 )

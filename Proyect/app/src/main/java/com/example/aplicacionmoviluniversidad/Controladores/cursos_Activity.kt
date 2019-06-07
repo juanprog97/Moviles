@@ -19,6 +19,7 @@ import com.example.aplicacionmoviluniversidad.Modelos.Horario
 import com.example.aplicacionmoviluniversidad.Modelos.Nota
 import com.example.aplicacionmoviluniversidad.R
 import com.example.aplicacionmoviluniversidad.Servicios.CursosServices
+import com.example.aplicacionmoviluniversidad.Servicios.UserDBService
 import kotlinx.android.synthetic.main.activity_cursos_.*
 import kotlinx.android.synthetic.main.dialog_notas.view.*
 import kotlinx.android.synthetic.main.item_nota.*
@@ -26,21 +27,13 @@ import java.text.ChoiceFormat.nextDouble
 import kotlin.random.Random.Default.nextInt
 
 class cursos_Activity : AppCompatActivity() {
-    private lateinit var correo : String
-    private lateinit var key : String
-    private lateinit var token: String
-    private lateinit var CursoService : CursosServices
     private lateinit var listView: LinearLayout
-
+    private var dbConexion: UserDBService = UserDBService(this)
     override fun onCreate(savedInstanceState: Bundle?) {
-        this.correo = intent.getStringExtra("email")
-        this.key = intent.getStringExtra("key")
-        this.token = intent.getStringExtra("token")
         super.onCreate(savedInstanceState)
-        CursoService= CursosServices(this)
         setContentView(R.layout.activity_cursos_)
 
-        val lista = this.CursoService.Buscar(this.key,this.token)
+        val lista = this.dbConexion.consultCurso()
         println(lista)
         //Testeo
         val notas = mutableListOf<Nota>()
@@ -60,7 +53,7 @@ class cursos_Activity : AppCompatActivity() {
         //Este Codigo se debe copiar en la parte principal de del programa//
         //Se agregan los datos que viene en la Api al adaptador
         var expan =findViewById<ExpandableListView>(R.id.lvExp)
-        var adapter = cursosExpandibleAdapter(this,lista)
+        var adapter = cursosExpandibleAdapter(this,lista!!)
         expan.setAdapter(adapter)
         expan.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
             val mDialogView = LayoutInflater.from(this).inflate(R.layout.dialog_notas, null)
@@ -83,9 +76,6 @@ class cursos_Activity : AppCompatActivity() {
 
     fun regresar(view: View){
         val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("key", this.key)
-        intent.putExtra("token", this.token)
-        intent.putExtra("email",this.correo )
         startActivity(intent)
 
     }

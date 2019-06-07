@@ -10,8 +10,18 @@
             android:icon="@mipmap/ic_sello"
             android:label="Aplicacion Universidad Javeriana"
             android:roundIcon="@mipmap/ic_sello_round"
+            android:usesCleartextTraffic="true"
             android:supportsRtl="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        <activity android:name=".Controladores.loading_page"
+                  android:theme="@style/NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
         <activity
                 android:name=".Controladores.anunciones_Activity"
                 android:theme="@style/NoActionBar">
@@ -36,11 +46,7 @@
                 android:name=".Controladores.login_Activity"
                 android:label="Javeriana Cali"
                 android:theme="@style/NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity
                 android:name=".Controladores.cursos_Activity"

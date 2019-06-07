@@ -32,7 +32,7 @@ class login_Activity : AppCompatActivity() {
     fun test(view: View){
         var user= findViewById<TextView>(R.id.user)
         var pass= findViewById<TextView>(R.id.password)
-        var User= UserModel(user.text.toString(),pass.text.toString(),null,null,null,null,null)
+        var User= UserModel(null,user.text.toString(),pass.text.toString(),null,null,null,null, null,null)
 
         val data = this.loginServices.validate(User)
         println(data)
@@ -41,12 +41,15 @@ class login_Activity : AppCompatActivity() {
             User.nombre= temp.getString("nombre")
             User.apellido= temp.getString("apellido")
             User.email= temp.getString("email")
-            User.cod= temp.getString("emplid")
-            User.toke= temp.getString("x-t6519fdd1s5q")
+            User.emplid= temp.getString("emplid")
+            User.nametoken = "x-t6519fdd1s5q"
+            User.value= temp.getString("x-t6519fdd1s5q")
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("key", "x-t6519fdd1s5q")
-            intent.putExtra("token", User.toke)
+            intent.putExtra("token", User.value)
             intent.putExtra("email",User.email )
+            intent.putExtra("periodo",User.periodo)
+            intent.putExtra("emplid",User.emplid)
             startActivity(intent)
         }else{
             Toast.makeText(this,"El usuario es invalido", Toast.LENGTH_SHORT).show()
